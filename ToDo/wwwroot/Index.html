@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDo App</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .pagination button {
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .pagination button:hover:not(:disabled) {
+            background-color: #45a049;
+        }
+        
+        .pagination button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        
+        .page-info {
+            font-weight: bold;
+            min-width: 100px;
+            text-align: center;
+        }
+        
+        .page-size-selector {
+            margin-left: 20px;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>My ToDo List</h1>
+        <form id="todo-form">
+            <input type="text" id="title" placeholder="Enter a task" required />
+            <button type="submit">Add</button>
+        </form>
+
+        <ul id="todo-list"></ul>
+
+        <div class="pagination">
+            <button id="prev-btn">← Previous</button>
+            <span id="page-info" class="page-info">Page 1 of 1</span>
+            <button id="next-btn">Next →</button>
+            <select id="page-size" class="page-size-selector">
+                <option value="10">10 per page</option>
+                <option value="25">25 per page</option>
+                <option value="50">50 per page</option>
+                <option value="100">100 per page</option>
+            </select>
+        </div>
+    </div>
+
+    <script src="todo.js"></script>
+</body>
+</html>
